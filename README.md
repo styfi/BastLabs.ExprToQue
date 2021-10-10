@@ -1,5 +1,6 @@
 # BastLabs.ExprToQue
 Expression to T-SQL query translator. Uses visitor pattern and System.Linq.Expressions.ExpressionVisitor override.
+Support some basic expressions and also string.IsNullOrEmpty, Contains and null-coalescing operator.
 
 Usage:
 
