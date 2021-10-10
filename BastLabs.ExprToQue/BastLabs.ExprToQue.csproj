@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Title>ExprToQue - expression to T-SQL query translator</Title>
+    <Description>Translates some basic expressions to partial T-SQL queries</Description>
+    <PackageId>BastLabs.ExprToQue</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>BastLabs</Authors>
+    <PackageTags>Expression;SQL;query;translate;convert</PackageTags>
   </PropertyGroup>
 
 </Project>
