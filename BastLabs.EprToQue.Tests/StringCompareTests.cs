@@ -6,10 +6,10 @@ using System.Linq.Expressions;
 
 namespace BastLabs.EprToQue.Tests
 {
-    public class StringTests : ExprToQueTest
+    public class StringCompareTests : ExprToQueTest
     {
         [Test]
-        public void StringToConstCompare()
+        public void String_Const()
         {
             Expression<Func<Product, bool>> expr;
             expr = p => p.Name == "abc";
@@ -18,7 +18,7 @@ namespace BastLabs.EprToQue.Tests
         }
 
         [Test]
-        public void StringCoalesceToConstCompare()
+        public void StringCoalesce_Const()
         {
             Expression<Func<Product, bool>> expr;
             expr = p => (p.Name ?? "") == "abc";
@@ -27,7 +27,7 @@ namespace BastLabs.EprToQue.Tests
         }
 
         [Test]
-        public void StringToString()
+        public void MemberString_MemberString()
         {
             Expression<Func<Product, bool>> expr;
             expr = p => p.Name == p.String;

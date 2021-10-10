@@ -20,6 +20,15 @@ namespace BastLabs.EprToQue.Tests
         }
 
         [Test]
+        public void MemberIntListContains()
+        {
+            Expression<Func<Product, bool>> expr;
+            expr = p => p.IntList.Contains(5);
+
+            Assert.AreEqual("(5 IN (@IntList))", ExprToQueService.Translate(expr));
+        }
+
+        [Test]
         public void IntListNotContains()
         {
             IEnumerable<int> intList = new List<int>() { 1, 2, 3 };

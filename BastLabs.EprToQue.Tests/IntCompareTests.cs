@@ -6,10 +6,10 @@ using System.Linq.Expressions;
 
 namespace BastLabs.EprToQue.Tests
 {
-    public class IntTests : ExprToQueTest
+    public class IntCompareTests : ExprToQueTest
     {
         [Test]
-        public void IntToConstCompare()
+        public void Int_Const()
         {
             Expression<Func<Product, bool>> expr = p => p.ID == 5;
 
@@ -17,11 +17,27 @@ namespace BastLabs.EprToQue.Tests
         }
 
         [Test]
-        public void IntNullableToConstCompare()
+        public void Const_Int()
+        {
+            Expression<Func<Product, bool>> expr = p => 5 == p.ID;
+
+            Assert.AreEqual("(5 = ID)", ExprToQueService.Translate(expr));
+        }
+
+        [Test]
+        public void IntNullable_Const()
         {
             Expression<Func<Product, bool>> expr = p => p.IDNullable == 5;
 
             Assert.AreEqual("(IDNullable = 5)", ExprToQueService.Translate(expr));
+        }
+
+        [Test]
+        public void Const_IntNullableCoalesce()
+        {
+            Expression<Func<Product, bool>> expr = p => 5 == (p.IDNullable ?? 0);
+
+            Assert.AreEqual("(5 = Coalesce(IDNullable, 0))", ExprToQueService.Translate(expr));
         }
 
         [Test]
