@@ -4,7 +4,7 @@ Supports some basic expressions. Supports methods string.IsNullOrEmpty, Contains
 
 Usage:
 
-```
+```C#
 ExprToQueService translator = new ExprToQueService();
 IEnumerable<string> stringList = new List<string>() { "a", "b", "c" };
 Expression<Func<Product, bool>> expr;
