@@ -109,24 +109,24 @@ namespace BastLabs.ExprToQue
             else if (m.Method.Name == "Contains")
             {
                 MemberExpression listExpr;
-                MemberExpression memberExpr;
+                Expression operandExpr;
 
                 if (typeof(IEnumerable).IsAssignableFrom(m.Arguments[0].Type))
                 {
                     listExpr = (MemberExpression)m.Arguments[0];
-                    memberExpr = (MemberExpression)m.Arguments[1];
+                    operandExpr = m.Arguments[1];
                 }
                 else
                 {
-                    memberExpr = (MemberExpression)m.Arguments[0];
+                    operandExpr = m.Arguments[0];
                     listExpr = (MemberExpression)m.Object;
                 }
                
                 sb.Append("(");
-                sb.Append(memberExpr.Member.Name);
+                var resultExpr = Visit(operandExpr);
                 sb.Append(" IN (");
                 
-                var resultExpr = Visit(listExpr);  // Visit(((MemberExpression)m.Object).Expression);
+                resultExpr = Visit(listExpr);  // Visit(((MemberExpression)m.Object).Expression);
 
                 sb.Append("))");
 
@@ -372,6 +372,11 @@ namespace BastLabs.ExprToQue
         {
             if (m.Expression != null && m.Expression.NodeType == ExpressionType.Parameter)
             {
+                if (m.Type.Name != "String" && typeof(IEnumerable).IsAssignableFrom(m.Type))
+                {
+                    sb.Append("@");
+                }
+
                 sb.Append(m.Member.Name);
                 return m;
             }
