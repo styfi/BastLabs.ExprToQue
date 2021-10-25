@@ -5,7 +5,7 @@
     <Title>ExprToQue - expression to T-SQL query translator</Title>
     <Description>Translate expressions to T-SQL queries!</Description>
     <PackageId>BastLabs.ExprToQue</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.0.6</Version>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
     <Authors>BastLabs</Authors>
     <PackageProjectUrl>https://github.com/styfi/BastLabs.ExprToQue</PackageProjectUrl>

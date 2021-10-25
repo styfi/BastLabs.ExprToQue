@@ -381,6 +381,16 @@ namespace BastLabs.ExprToQue
                 return m;
             }
 
+            if (ExprToQueConfig.TranslateEnumerablesAsParameters
+                && m.Expression != null && m.Expression.NodeType == ExpressionType.Constant
+                && typeof(IEnumerable).IsAssignableFrom(m.Type) 
+                && m.Type.Name != "String")
+            {
+                sb.Append("Select Val from @");
+                sb.Append(m.Member.Name);
+                return m;
+            }
+
             if (m.Expression != null && m.Expression.NodeType == ExpressionType.Constant)
             {
                 return Visit(m.Expression);
