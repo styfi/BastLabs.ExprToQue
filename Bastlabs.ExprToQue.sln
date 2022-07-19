@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BastLabs.ExprToQue", "BastLabs.ExprToQue\BastLabs.ExprToQue.csproj", "{4D7AC641-93B3-4747-982D-03C0B4367890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BastLabs.EprToQue.Tests", "BastLabs.EprToQue.Tests\BastLabs.EprToQue.Tests.csproj", "{EEF5D09B-2236-4ED9-A3BA-3BF9BD38AC66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BastLabs.EprToQue.Tests", "BastLabs.EprToQue.Tests\BastLabs.EprToQue.Tests.csproj", "{EEF5D09B-2236-4ED9-A3BA-3BF9BD38AC66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BastLabs.ExprToQueNET2.0", "BastLabs.ExprToQueNET2.0\BastLabs.ExprToQueNET2.0.csproj", "{7A81A6B2-167F-421B-8E27-B3541E190A6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{EEF5D09B-2236-4ED9-A3BA-3BF9BD38AC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEF5D09B-2236-4ED9-A3BA-3BF9BD38AC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEF5D09B-2236-4ED9-A3BA-3BF9BD38AC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A81A6B2-167F-421B-8E27-B3541E190A6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A81A6B2-167F-421B-8E27-B3541E190A6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A81A6B2-167F-421B-8E27-B3541E190A6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A81A6B2-167F-421B-8E27-B3541E190A6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
